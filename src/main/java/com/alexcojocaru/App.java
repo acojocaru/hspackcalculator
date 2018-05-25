@@ -40,9 +40,7 @@ public class App {
         }).collect(Collectors.groupingBy(HsCard::getSet));
 
         Set<Statistics> statistics = new TreeSet<>();
-        craftableCards.keySet().forEach(set -> {
-            statistics.add(new Statistics(set, craftableCards.get(set)));
-        });
+        craftableCards.keySet().forEach(set -> statistics.add(new Statistics(set, craftableCards.get(set))));
 
         statistics.forEach(System.out::println);
     }
